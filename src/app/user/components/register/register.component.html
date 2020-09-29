@@ -1,0 +1,94 @@
+<div class="form-container p-shadow-24">
+    <div class="p-grid">
+        <div class="p-col"></div>
+        <div class="p-col logo-class">
+            <img src="assets/Logos/tracker_light.png">
+        </div>
+        <div class="p-col"></div>
+    </div>
+    <p-messages></p-messages>
+    <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText formControlName="username" placeholder="Username">         
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="usernameCtrl.errors?.required && submitted">
+                    Username is required
+                </small>
+            </div>
+        </div>
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                <input type="password" pPassword placeholder="Password" formControlName="password" [feedback]="false">
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="passwordCtrl.errors?.required && submitted">
+                    Password is required
+                </small>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="passwordCtrl.errors?.minlength && submitted">
+                    Password must be more than 6 charectars
+                </small>
+            </div>
+        </div>
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                <input type="password" pPassword placeholder="Confirm Password" formControlName="confirmPassword" [feedback]="false">
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="confirmPasswordCtrl.errors?.required && submitted">
+                    Confirm password is required
+                </small>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="confirmPasswordCtrl.errors?.mustMatch && submitted">
+                    Confirm password does not match
+                </small>
+            </div>
+        </div>
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-mobile"></i></span>
+                <input type="number" formControlName="mobileNo" pInputText placeholder="Mobile No.">
+            </div>
+            <div>
+                <small id="mobileNo-help" class="p-invalid" 
+                    *ngIf="mobileNoCtrl.errors?.required && submitted">
+                    Mobile No. is required
+                </small>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="mobileNoCtrl.errors?.invalidMobileNo && submitted">
+                    Please enter valid Mobile No.
+                </small>
+            </div>
+        </div>
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+                <input type="email" formControlName="email" pInputText placeholder="Email">
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="emailCtrl.errors?.required && submitted">
+                    Email is required
+                </small>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="emailCtrl.errors?.email && submitted">
+                    Please enter valid mail Id
+                </small>
+            </div>
+        </div>
+        <div class="m-1">
+            <div class="p-inputgroup">
+                <p-button type="submit" label="Register" class="p-button-block p-button-raised" icon="pi pi-user-plus"></p-button>
+            </div>
+        </div>
+        <div class="p-mb-3 p-text-center">Center</div>
+    </form>
+</div>

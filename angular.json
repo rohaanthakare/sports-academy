@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sports-academy"
+    }
+  },
+  "defaultProject": "sports-academy",
+  "cli": {
+    "analytics": false
+  }
 }
