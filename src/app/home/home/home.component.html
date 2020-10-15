@@ -1,0 +1,7 @@
+<app-header (menuToggleClicked)="onMenuToggleClicked($event)"></app-header>
+<app-navigation [display]="navigationStatus"></app-navigation>
+<div class="p-grid p-m-1">
+    <div class="p-col">
+        <router-outlet></router-outlet>
+    </div>
+</div>

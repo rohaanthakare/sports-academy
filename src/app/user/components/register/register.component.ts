@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { ValidatorsService } from 'src/app/shared/services/validators.service';
 import { UserService } from '../../services/user.service';
 import { MessageService } from 'primeng/api';
-import { Role } from '../../models/user.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   });
   submitted = false;
   constructor(private formBuilder: FormBuilder, private validatorService: ValidatorsService, private userService: UserService,
-    private msgService: MessageService) { }
+    private msgService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -57,6 +57,10 @@ export class RegisterComponent implements OnInit {
         }
       );
     }
+  }
+
+  navigateToPage(page) {
+    this.router.navigate([page]);
   }
 
 }

@@ -1,20 +1,51 @@
-<div class="form-container">
+<div class="form-container p-shadow-24">
     <div class="p-grid">
         <div class="p-col"></div>
         <div class="p-col logo-class">
             <img src="assets/Logos/tracker_light.png">
         </div>
         <div class="p-col"></div>
-    </div>    
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-        <input type="text" pInputText placeholder="Username">         
     </div>
-    <div class="p-inputgroup">
-        <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-        <input type="password" pPassword placeholder="Password" [feedback]="false">
-    </div>
-    <div class="p-inputgroup">
-        <p-button label="Login" class="p-button-block p-button-raised" icon="pi pi-unlock"></p-button>
-    </div>
+    <p-messages></p-messages>
+    <form [formGroup]="loginForm" (ngSubmit)="authenticateUser()">
+        <div class="p-m-3">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText formControlName="username" placeholder="Username">         
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="usernameCtrl.errors?.required && submitted">
+                    Username is required
+                </small>
+            </div>
+        </div>
+        <div class="p-m-3">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                <input type="password" pPassword placeholder="Password" formControlName="password" [feedback]="false">
+            </div>
+            <div>
+                <small id="username2-help" class="p-invalid" 
+                    *ngIf="passwordCtrl.errors?.required && submitted">
+                    Password is required
+                </small>
+            </div>    
+        </div>
+        <div class="p-m-3">
+            <div class="p-inputgroup">
+                <p-button type="submit" label="Login" class="p-button-block p-button-raised" icon="pi pi-unlock"></p-button>
+            </div>
+        </div>
+        <div class="p-mt-3 p-mb-1 p-text-center link-text">
+            <small>
+                Not a member? <a href="javascript:" (click)="navigateToPage('user/register')">Register</a>
+            </small>
+        </div>
+        <div class="p-mb-3 p-text-center link-text">
+            <small>
+                Forgot Password? <a href="javascript:" (click)="navigateToPage('user/forgot-pass')">Click here</a>
+            </small>
+        </div>
+    </form>
 </div>

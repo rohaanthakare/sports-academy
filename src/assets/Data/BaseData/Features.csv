@@ -1,0 +1,3 @@
+Code, Name, Title, Display Order, Parent, Is Menu?, Is Toolbar?, Is App Feature, Is Web Feature, Feature Type, Route, Web Icon, App Icon
+ACADEMIES,Academies,Academies,1,,true,false,false,true,list,academies,,
+CREATE_ACADEMY,Create Academy,Create Academy,1,ACADEMIES,false,true,false,true,create,academies/create,,

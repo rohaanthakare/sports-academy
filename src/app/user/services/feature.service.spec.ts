@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MasterViewService } from './master-view.service';
+import { FeatureService } from './feature.service';
 
-describe('MasterViewService', () => {
-  let service: MasterViewService;
+describe('FeatureService', () => {
+  let service: FeatureService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MasterViewService);
+    service = TestBed.inject(FeatureService);
   });
 
   it('should be created', () => {

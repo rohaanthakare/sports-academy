@@ -1,0 +1,47 @@
+<div class="p-grid p-m-1">
+    <div class="p-col p-shadow-24">
+        <p-panel header="Upload Data">
+            <p-toolbar>
+                <div class="p-toolbar-group-left">
+                    <p-button label="Load Modules" (click)="loadModules()" styleClass="p-button-success p-mr-2"></p-button>
+                    <!-- <p-button [disabled]="!isModulesLoaded" label="Select Modules" styleClass="p-button-success p-mr-2"></p-button> -->
+                    <p-button [disabled]="!isDataFilesRead" (click)="uploadData()" label="Upload Data" styleClass="p-button-success"></p-button>
+                </div>
+            </p-toolbar>
+            <div class="p-grid p-m-1">
+                <div class="p-col-12">
+                    <p-panel header="Data Load Status" *ngIf="filesToLoad.length > 0">
+                        <h4>
+                            Data to Upload
+                            <p-progressBar [value]="totalRemainingPercentage"></p-progressBar>
+                        </h4>
+                        <h4>
+                            Failed Data
+                            <p-progressBar [value]="totalFailedPercentage"></p-progressBar>
+                        </h4>
+                        <h4>
+                            Uploaded Data
+                            <p-progressBar [value]="totalUploadedPercentage"></p-progressBar>
+                        </h4>
+                    </p-panel>
+                </div>
+                <div class="p-col-12 p-sm-12 p-md-6 p-lg-4 p-xl-4" *ngFor="let module of modulesForLoading">
+                    <p-panel header="{{module.moduleName}} - {{module.actionName}}">
+                        <h4>
+                            Data to Upload
+                            <p-progressBar [value]="module.remainingPercentage"></p-progressBar>
+                        </h4>
+                        <h4>
+                            Failed Data
+                            <p-progressBar [value]="module.failedPercentage"></p-progressBar>
+                        </h4>
+                        <h4>
+                            Uploaded Data
+                            <p-progressBar [value]="module.uploadedPercentage"></p-progressBar>
+                        </h4>
+                    </p-panel>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>

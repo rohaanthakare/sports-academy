@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '@fortawesome/fontawesome-free/css/all.css';
 @import 'primeflex/primeflex.min.css';
 @import 'primeicons/primeicons.css';
 @import 'primeng/resources/primeng.min.css';
@@ -45,4 +45,21 @@ body{
 
 .m-1 {
     margin:15px;
+}
+
+.link-text {
+    color: white;
+}
+
+.link-text a {
+    color: #6fffe9;
+    text-decoration: none;
+}
+
+.tracker-header {
+    .p-toolbar {
+        background-color: #1C2541;
+        border: none;
+        border-radius: 0px;
+    }
 }

@@ -1,0 +1,16 @@
+<LoadDataFiles>
+	<LoadDataModule>
+		<ModuleName>MasterData</ModuleName>
+		<DataFileName>MasterData.csv</DataFileName>
+		<DataFilePath>assets/Data/BaseData/</DataFilePath>
+		<ActionName>Master Data Upload</ActionName>
+		<Action>uploadMasterData</Action>
+	</LoadDataModule>
+	<LoadDataModule>
+		<ModuleName>Feature</ModuleName>
+		<DataFileName>Features.csv</DataFileName>
+		<DataFilePath>assets/Data/BaseData/</DataFilePath>
+		<ActionName>Features Upload</ActionName>
+		<Action>uploadFeatures</Action>
+	</LoadDataModule>
+</LoadDataFiles>

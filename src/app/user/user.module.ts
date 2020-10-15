@@ -17,10 +17,12 @@ import { OtpActivationComponent } from './components/otp-activation/otp-activati
 import { LinkActivationComponent } from './components/link-activation/link-activation.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeGuardService } from './services/home-guard.service';
 
 const routes: Routes = [{
   path:'login',
-  component: LoginComponent
+  component: LoginComponent,
+  canActivate: [HomeGuardService]
 }, {
   path:'register',
   component: RegisterComponent

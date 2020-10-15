@@ -1,0 +1,13 @@
+<p-toolbar class="tracker-header">
+    <div class="p-toolbar-group-left p-ml-3 p-mt-1 p-mb-1">
+        <a href="javascript:" (click)="onMenuToggleClick()">
+            <i class="pi pi-bars p-mr-4" style="color: white;"></i>
+        </a>
+        <img src="../../../assets/Logos/tracker_light.png" width="200px">
+    </div>
+    
+    <div class="p-toolbar-group-right p-mr-5">
+        <p-button icon="pi pi-user" [label]="displayName" styleClass="p-button-success" (click)="menu.toggle($event)"></p-button>
+        <p-menu #menu [popup]="true" [model]="settings"></p-menu>
+    </div>
+</p-toolbar>
