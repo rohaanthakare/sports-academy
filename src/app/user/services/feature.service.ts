@@ -19,12 +19,13 @@ export class FeatureService {
       .pipe(
         catchError(error => {return of({
           status: false
-        })})
-      );
+        })
+      })
+    );
   }
 
   uploadFeatures(rows, moduleDetails: DataLoadModule, dataLoaderCmp: ImportDataComponent) {
-    from(rows).pipe(
+    return from(rows).pipe(
       concatMap(currentRow => {
         const featureObj = new Feature();
         featureObj.code = currentRow[0];
@@ -42,13 +43,6 @@ export class FeatureService {
         featureObj.featureAppIconClass = currentRow[12];
         return this.createFeature(featureObj);
       })
-    ).subscribe(
-      data => {
-        dataLoaderCmp.updateProgress(moduleDetails, true);
-      },
-      error => {
-        dataLoaderCmp.updateProgress(moduleDetails, false);
-      }
-    )
+    );
   }
 }

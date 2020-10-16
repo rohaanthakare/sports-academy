@@ -4,11 +4,13 @@ import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
 import { DataLoaderService } from 'src/app/shared/services/data-loader.service';
 import { MasterDataService } from 'src/app/user/services/master-data.service';
 import { FeatureService } from 'src/app/user/services/feature.service';
-import { from, Observable, of, empty, onErrorResumeNext } from 'rxjs';
-import { concatMap, catchError, map, switchMap } from 'rxjs/operators';
+import { RoleService } from 'src/app/user/services/role.service';
+import { from } from 'rxjs';
+import { concatMap } from 'rxjs/operators';
 const loadDataModels = {
   MasterDataService,
-  FeatureService
+  FeatureService,
+  RoleService
 };
 
 @Component({
@@ -113,7 +115,6 @@ export class ImportDataComponent implements OnInit {
       },
       () => {
         console.log('Module Loaded - ' + this.modulesForLoading[tmpIndex].moduleName);
-        tmpIndex++;
       }
     );
   }

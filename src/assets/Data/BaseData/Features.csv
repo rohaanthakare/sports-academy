@@ -1,3 +1,4 @@
 Code, Name, Title, Display Order, Parent, Is Menu?, Is Toolbar?, Is App Feature, Is Web Feature, Feature Type, Route, Web Icon, App Icon
-ACADEMIES,Academies,Academies,1,,true,false,false,true,list,academies,,
-CREATE_ACADEMY,Create Academy,Create Academy,1,ACADEMIES,false,true,false,true,create,academies/create,,
+DEMO_FEATURE,Demo Feature,Academies,1,,true,false,false,true,list,academies,,
+DEMO_CHILD_FEATURE1,Demo Child Feature1,Demo Child Feature1,1,DEMO_FEATURE,true,false,false,true,list,demo/list,,
+DEMO_CHILD_FEATURE2,Demo Child Feature2,Demo Child Feature2,1,DEMO_CHILD_FEATURE1,false,true,false,true,create,demo/create,,

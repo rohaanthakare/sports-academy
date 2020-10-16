@@ -13,4 +13,11 @@
 		<ActionName>Features Upload</ActionName>
 		<Action>uploadFeatures</Action>
 	</LoadDataModule>
+	<LoadDataModule>
+		<ModuleName>Role</ModuleName>
+		<DataFileName>Roles.csv</DataFileName>
+		<DataFilePath>assets/Data/BaseData/</DataFilePath>
+		<ActionName>Roles Upload</ActionName>
+		<Action>uploadRoles</Action>
+	</LoadDataModule>
 </LoadDataFiles>
