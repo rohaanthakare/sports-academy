@@ -5,12 +5,14 @@ import { DataLoaderService } from 'src/app/shared/services/data-loader.service';
 import { MasterDataService } from 'src/app/user/services/master-data.service';
 import { FeatureService } from 'src/app/user/services/feature.service';
 import { RoleService } from 'src/app/user/services/role.service';
+import { UserService } from 'src/app/user/services/user.service';
 import { from } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 const loadDataModels = {
   MasterDataService,
   FeatureService,
-  RoleService
+  RoleService,
+  UserService
 };
 
 @Component({

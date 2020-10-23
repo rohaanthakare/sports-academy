@@ -4,3 +4,8 @@ export class Role {
     description: string;
     permissions: any[];
 }
+
+export class RoleFeatureMapping {
+    roleCode: string;
+    featureCode: string;
+}

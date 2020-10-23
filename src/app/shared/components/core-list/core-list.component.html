@@ -1,0 +1,25 @@
+<div class="p-grid p-m-1">
+    <div class="p-col p-shadow-24">
+        <p-card header="Core List">
+            <p-table [value]="sourceData">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data>
+                    <tr>
+                        <td>{{data.code}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.category}}</td>
+                        <td>{{data.quantity}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
+    </div>
+</div>
+

@@ -1,4 +1,8 @@
 Code, Name, Title, Display Order, Parent, Is Menu?, Is Toolbar?, Is App Feature, Is Web Feature, Feature Type, Route, Web Icon, App Icon
-DEMO_FEATURE,Demo Feature,Academies,1,,true,false,false,true,list,academies,,
-DEMO_CHILD_FEATURE1,Demo Child Feature1,Demo Child Feature1,1,DEMO_FEATURE,true,false,false,true,list,demo/list,,
-DEMO_CHILD_FEATURE2,Demo Child Feature2,Demo Child Feature2,1,DEMO_CHILD_FEATURE1,false,true,false,true,create,demo/create,,
+DEMO_FEATURE,Demo Feature,Demo Feature,1,,true,false,false,true,list,demo,,
+DEMO_LIST1,Demo List 1,Demo List 1,1,DEMO_FEATURE,true,false,false,true,list,demo/list,fas fa-list-ul,
+DEMO_LIST2,Demo List 2,Demo List 2,1,DEMO_FEATURE,true,false,false,true,list,demo/list2,fas fa-list-ol,
+DEMO_CREATE_BUTTON,Create Button,Create Button,1,DEMO_LIST1,false,true,false,true,create,demo/create,fas fa-plus,
+DEMO_EDIT_BUTTON,Edit Button,Edit Button,2,DEMO_LIST1,false,true,false,true,edit,demo/edit,fas fa-edit,
+DEMO_DELETE_BUTTON,Delete Button,Delete Button,3,DEMO_LIST1,false,true,false,true,delete,demo/delete,fas fa-trash-alt,
+DEMO_CUSTOM_BUTTON,Custom Button,Custom Button,4,DEMO_LIST1,false,true,false,true,custom,demo/custom,fas fa-sitemap,

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
 import { ImportDataComponent } from 'src/app/home/import-data/import-data.component';
-import { from, of } from 'rxjs';
-import { concatMap, catchError } from 'rxjs/operators';
+import { from, of, Observable, pipe } from 'rxjs';
+import { concatMap, catchError, map, shareReplay } from 'rxjs/operators';
 import { Feature } from '../models/feature.model';
 
 @Injectable({
@@ -12,6 +12,7 @@ import { Feature } from '../models/feature.model';
 })
 export class FeatureService {
   moduleName = 'user';
+  private cachedFeatures: Observable<any[]>;
   constructor(private http: HttpClient) { }
 
   createFeature(feature) {
@@ -44,5 +45,43 @@ export class FeatureService {
         return this.createFeature(featureObj);
       })
     );
+  }
+
+  getNavigationFeatures() {
+    let navItems = [];
+    return this.getRoleFeatures().pipe(
+      map((data: any) => {
+        const allFeatures = data.features;
+        allFeatures.forEach((item) => {
+          item.label = item.name;
+          item.routerLink = item.featureRoute;
+        });
+        const navMenuItems = data.features.filter((d) => d.isMenuFeature && !d.parent);
+        navMenuItems.forEach((item) => {
+          delete item.routerLink;
+          item.items = allFeatures.filter((d) => d.isMenuFeature && item._id === d.parent);
+        });
+        return navMenuItems;
+      })
+    );
+  }
+
+  getRoleFeatures() {
+    if (!this.cachedFeatures) {
+      console.log(this.cachedFeatures);
+      this.cachedFeatures = this.requestRoleFeatures().pipe(
+        shareReplay(1000)
+      );
+    }
+    return this.cachedFeatures;
+  }
+
+  requestRoleFeatures() {
+    return this.http.get<any>(`${environment.ApiURL}/api/${this.moduleName}/get_role_features`)
+      .pipe(
+        map(response => {
+          return response;
+        })
+      );    
   }
 }

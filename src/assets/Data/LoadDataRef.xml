@@ -20,4 +20,18 @@
 		<ActionName>Roles Upload</ActionName>
 		<Action>uploadRoles</Action>
 	</LoadDataModule>
+	<LoadDataModule>
+		<ModuleName>Role</ModuleName>
+		<DataFileName>RoleFeaturesMapping.csv</DataFileName>
+		<DataFilePath>assets/Data/BaseData/</DataFilePath>
+		<ActionName>Roles Feature Mapping</ActionName>
+		<Action>uploadRoleFeatureMapping</Action>
+	</LoadDataModule>
+	<LoadDataModule>
+		<ModuleName>User</ModuleName>
+		<DataFileName>Users.csv</DataFileName>
+		<DataFilePath>assets/Data/BaseData/</DataFilePath>
+		<ActionName>User Create</ActionName>
+		<Action>uploadUsers</Action>
+	</LoadDataModule>
 </LoadDataFiles>
