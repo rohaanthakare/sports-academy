@@ -40,8 +40,8 @@ export class RegisterComponent implements OnInit {
       this.registrationForm.value.action = 'register';
       this.userService.createUser(this.registrationForm.value).subscribe(
         (response: any) => {
-          console.log('Registration success----');
-          console.log(response);
+          this.registrationForm.reset();
+          this.submitted = false;
           this.msgService.clear();
           this.msgService.add({
             severity: 'success',
@@ -49,8 +49,6 @@ export class RegisterComponent implements OnInit {
           });
         },
         error => {
-          console.log('Registration error----');
-          console.log(error);
           this.msgService.add({
             severity: 'error',
             detail: error.error.message

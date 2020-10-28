@@ -38,7 +38,6 @@ export class ImportDataComponent implements OnInit {
   }
 
   loadModules() {
-    console.log('load-modules');
     this.dataLoader.parseLoadDataXML().subscribe(
       data => {
         const xmlParser = new DOMParser();
@@ -57,7 +56,6 @@ export class ImportDataComponent implements OnInit {
       },
       error => {},
       () => {
-        console.log('XML File Read Completed');
         this.readDataFile();
       }
     );
@@ -93,7 +91,6 @@ export class ImportDataComponent implements OnInit {
         this.modulesForLoading.push(moduleDetail);
       },
       error => {
-        console.log('Inside Error');
       },
       () => {
         // this.uploadData();

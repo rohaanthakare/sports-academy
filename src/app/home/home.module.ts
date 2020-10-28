@@ -15,22 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
-import { ProgressBarModule } from 'primeng/progressbar';
-import { ImportDataComponent } from './import-data/import-data.component';
 
 const routes: Routes = [{
   path: '',
   component: DashboardComponent
-}, {
-  path: 'import-data',
-  component: ImportDataComponent
 }];
 
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, NavigationComponent, DashboardComponent, ImportDataComponent],
+  declarations: [HomeComponent, HeaderComponent, NavigationComponent, DashboardComponent],
   imports: [
     CommonModule, RouterModule.forChild(routes), SharedModule, PanelModule,
-    SidebarModule, ButtonModule, ToolbarModule, MenuModule, PanelMenuModule, ProgressBarModule
+    SidebarModule, ButtonModule, ToolbarModule, MenuModule, PanelMenuModule
   ]
 })
 export class HomeModule { }

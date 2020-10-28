@@ -26,7 +26,11 @@ export class GlobalConstants {
         items:[{
             label: 'Upload Data',
             icon:'pi pi-fw pi-upload',
-            routerLink: 'import-data'
+            routerLink: 'superadmin/import-data'
         }]
+    }, {
+        label: 'Mail Tester',
+        icon:'pi-fw fas fa-envelope',
+        routerLink: 'superadmin/mail-tester'
     }];
 }

@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { catchError, concatMap } from 'rxjs/operators';
 import { of, from } from 'rxjs';
 import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
-import { ImportDataComponent } from 'src/app/home/import-data/import-data.component';
+import { ImportDataComponent } from 'src/app/superadmin/import-data/import-data.component';
 import { Role, RoleFeatureMapping } from '../models/role.model';
 
 @Injectable({

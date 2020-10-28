@@ -1,0 +1,19 @@
+<p-messages></p-messages>
+<div class="p-grid p-m-1">
+    <div class="p-col p-shadow-24">
+        <p-panel header="Mail Tester">
+            <div class="p-grid p-m-1">
+                <div class="p-col">
+                    <form [formGroup]="mailTesterForm">
+                        <div *ngFor="let template of mailTemplates" class="p-field-checkbox">
+                            <p-radioButton name="template" [value]="template.code" [formControlName]="'selectedTemplate'">
+                            </p-radioButton>
+                            <label [for]="template.code">{{template.name}}</label>
+                        </div>
+                        <p-button label="Send Mail" (click)="sendMail()"></p-button>
+                    </form>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>

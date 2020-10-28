@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
-import { ImportDataComponent } from 'src/app/home/import-data/import-data.component';
+import { ImportDataComponent } from 'src/app/superadmin/import-data/import-data.component';
 import { from, of, Observable, pipe } from 'rxjs';
 import { concatMap, catchError, map, shareReplay } from 'rxjs/operators';
 import { Feature } from '../models/feature.model';
@@ -68,7 +68,6 @@ export class FeatureService {
 
   getRoleFeatures() {
     if (!this.cachedFeatures) {
-      console.log(this.cachedFeatures);
       this.cachedFeatures = this.requestRoleFeatures().pipe(
         shareReplay(1000)
       );

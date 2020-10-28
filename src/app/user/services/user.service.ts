@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { map, concatMap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
-import { ImportDataComponent } from 'src/app/home/import-data/import-data.component';
+import { ImportDataComponent } from 'src/app/superadmin/import-data/import-data.component';
 import { from } from 'rxjs';
 import { FeatureService } from './feature.service';
 
@@ -44,5 +44,11 @@ export class UserService {
         return this.createUser(userObj);
       })
     );
+  }
+
+  testMailTemplate(mailTemplate) {
+    return this.http.post(`${environment.ApiURL}/api/${this.moduleName}/test_mail_template`, {
+      name: mailTemplate
+    });
   }
 }

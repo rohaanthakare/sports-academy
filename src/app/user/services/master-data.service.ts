@@ -5,7 +5,7 @@ import { DataLoadModule } from 'src/app/shared/models/data-loader.model';
 import { from, of } from 'rxjs';
 import { concatMap, catchError } from 'rxjs/operators';
 import { MasterData } from '../models/masterdata.model';
-import { ImportDataComponent } from 'src/app/home/import-data/import-data.component';
+import { ImportDataComponent } from 'src/app/superadmin/import-data/import-data.component';
 
 @Injectable({
   providedIn: 'root'
